@@ -39,8 +39,8 @@ public class Classroom extends World
     {
         Floor floor = new Floor();
         addObject(floor, 395, 545);
-        MagicPortal magicportal2 = new MagicPortal();
-        addObject(magicportal2, 722, 449);
+        MagicPortal magicportal = new MagicPortal();
+        addObject(magicportal, 722, 449);
         Professor professor = new Professor();
         addObject(professor, 391, 469);
 
