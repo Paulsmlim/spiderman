@@ -1,26 +1,25 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 import java.awt.Font;
 import java.awt.Color;
+
 /**
- * Write a description of class ReturnJavaRoom here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Classroom where Paul returns to after he defeats the Robots and retrieves his USB.
+ * He can give the USB to the Professor to win the game
  */
-public class ReturnJavaRoom extends World
+public class ReturnClassroom extends World
 {
     Health h;
     Paul p;
+    
     /**
-     * Constructor for objects of class ReturnJavaRoom.
-     * 
+     * Constructor for objects of class ReturnClassroom.
      */
-    public ReturnJavaRoom(Health health, Paul paul)
-    {    
-        // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
+    public ReturnClassroom(Health health, Paul paul)
+    {
         super(800, 600, 1); 
         h = health;
         p = paul;
+        
         getBackground().setColor(Color.black);
         getBackground().setFont(new Font("",Font.BOLD,25));
         getBackground().drawString("FINAL EXAM PROJECT",376,245);
@@ -32,8 +31,7 @@ public class ReturnJavaRoom extends World
     }
     
     /**
-     * Prepare the world for the start of the program. That is: create the initial
-     * objects and add them to the world.
+     * Create the initial objects and add them to the world.
      */
     private void prepare()
     {
