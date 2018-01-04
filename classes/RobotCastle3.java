@@ -1,24 +1,22 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 import java.awt.Font;
 import java.awt.Color;
+
 /**
- * Write a description of class RobotCastle3 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Third stage of the Robot Castle which only has Robot3's
  */
 public class RobotCastle3 extends World
 {
     Health h;
     Paul p;
+    
     /**
-     * Constructor for objects of class RobotCastle3.
-     * 
+     * Constructor for objects of class RobotCastle3
      */
     public RobotCastle3(Health health, Paul paul)
-    {    
-        // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
+    {
         super(800, 600, 1);
+        
         h = health;
         p = paul;
         getBackground().setColor(Color.white);
@@ -28,8 +26,7 @@ public class RobotCastle3 extends World
     }
     
     /**
-     * Prepare the world for the start of the program. That is: create the initial
-     * objects and add them to the world.
+     * Create the initial objects and add them to the world.
      */
     private void prepare()
     {
