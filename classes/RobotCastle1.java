@@ -1,26 +1,24 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 import java.awt.Font;
 import java.awt.Color;
+
 /**
- * Write a description of class RobotCastle1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * First stage of the Robot Castle which has 3 of the weakest Robot.
  */
 public class RobotCastle1 extends World
 {    
     Health h;
     Paul p;
+    
     /**
-     * Constructor for objects of class RobotCastle1.
-     * 
+     * Constructor for objects of class RobotCastle1
      */
     public RobotCastle1(Health health, Paul paul)
-    {    
-        // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
+    {
         super(800, 600, 1);
         h = health;
         p = paul;
+        
         getBackground().setColor(Color.white);
         getBackground().setFont(new Font("",Font.BOLD,13));
         getBackground().drawString("DEFEAT ALL THE ROBOTS AND THEN ENTER THE CASTLE DOOR TO GO TO THE NEXT LEVEL",140,55);
@@ -28,8 +26,7 @@ public class RobotCastle1 extends World
     }
 
     /**
-     * Prepare the world for the start of the program. That is: create the initial
-     * objects and add them to the world.
+     * Create the initial objects and add them to the world.
      */
     private void prepare()
     {        
