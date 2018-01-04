@@ -1,26 +1,25 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 import java.awt.Font;
 import java.awt.Color;
+
 /**
- * Write a description of class RobotCastle4 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Last stage of the Robot Castle which has 2 of each Robots. This stage contains the USB and the portal
+ * to go to ReturnClassroom
  */
 public class RobotCastle4 extends World
 {
     Health h;
     Paul p;
+    
     /**
-     * Constructor for objects of class RobotCastle4.
-     * 
+     * Constructor for objects of class RobotCastle4
      */
     public RobotCastle4(Health health, Paul paul)
-    {    
-        // Create a new world with 800x600 cells with a cell size of 1x1 pixels.
+    {
         super(800, 600, 1);
         h = health;
         p = paul;
+        
         getBackground().setColor(Color.white);
         getBackground().setFont(new Font("",Font.BOLD,12));
         getBackground().drawString("DEFEAT ALL THE ROBOTS, PICK UP PAUL'S USB, AND THEN ENTER THE PORTAL TO RETURN TO THE CLASSROOM!",140,55);
@@ -28,8 +27,7 @@ public class RobotCastle4 extends World
     }
 
     /**
-     * Prepare the world for the start of the program. That is: create the initial
-     * objects and add them to the world.
+     * Create the initial objects and add them to the world.
      */
     private void prepare()
     {
