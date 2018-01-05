@@ -14,7 +14,7 @@ public class BoltRobotBolt extends Actor
 
     public void act()
     {
-        // If BoltRobotBolt didn't hit anything, keep moving; else, splat
+        // If BoltRobotBolt didn't hit anything, keep moving; else, start/continue splat animation
         if(!splat){
             checkKeys();
         } else {
