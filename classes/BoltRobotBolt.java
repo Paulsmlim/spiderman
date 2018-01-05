@@ -14,6 +14,7 @@ public class BoltRobotBolt extends Actor
 
     public void act()
     {
+        // If BoltRobotBolt didn't hit anything, keep moving; else, splat
         if(!splat){
             checkKeys();
         } else {
@@ -76,7 +77,8 @@ public class BoltRobotBolt extends Actor
         //Does damage to Paul
         p.takeDamage(damage);
     }
-
+    
+    // Returns true if a BoltRobotBolt object is at the edge of the world
     public boolean atWorldEdge()
     {
         if (getX() <= 5 || getX() >= getWorld().getWidth()-5)
