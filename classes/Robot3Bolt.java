@@ -16,10 +16,6 @@ public class Robot3Bolt extends Actor
     // True if Robot3Bolt object hits Paul or world edge
     private boolean splat = false;
 
-    /**
-     * Act - do whatever the Robot3Bolt wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         // After Robot3Bolt object is initialized, begin its initial animation
