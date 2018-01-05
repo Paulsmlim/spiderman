@@ -1,17 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class BossDoor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Door in RobotCastle3 that takes Paul to the last stage of the Robot Castle (RobotCastle4)
  */
 public class BossDoor extends Actor
 {
-    /**
-     * Act - do whatever the BossDoor wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         
