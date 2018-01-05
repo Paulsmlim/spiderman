@@ -23,7 +23,7 @@ public class Robot3Bolt extends Actor
             initAnimation();
         }
         else {
-            //If this bolt did not splat, it still moves
+            // If bolt object did not splat, continue moving; else, start/continue splat animation
             if(!splat){
                 checkKeys();
             } else {
