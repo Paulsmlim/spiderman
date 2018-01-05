@@ -1,19 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Robot3Bolt here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Bolt of the object class Robot3. Each bolt that hits Paul takes
+ * away 40 health points from Paul
  */
 public class Robot3Bolt extends Actor
 {
-    public boolean right = true;
-    //True if Robot3Bolt was recently called
-    private boolean changeImage = true;
-    private boolean splat = false;
-    private int imageNum = 1;
+    // Time counter for object image changes
     private int time = 0;
+    private int imageNum = 1;
+    // Direction of the Robot3Bolt object
+    public boolean right = true;
+    // True when Robot3Bolt object is initially created
+    private boolean initialized = true;
+    // True if Robot3Bolt object hits Paul or world edge
+    private boolean splat = false;
 
     /**
      * Act - do whatever the Robot3Bolt wants to do. This method is called whenever
@@ -21,36 +22,42 @@ public class Robot3Bolt extends Actor
      */
     public void act() 
     {
-        //After this bolt is summoned, it has to change its image. Then it starts moving
-        if(changeImage){
-            changeImage();
+        // After Robot3Bolt object is initialized, begin its initial animation
+        if(initialized){
+            initAnimation();
         }
-        else{
+        else {
             //If this bolt did not splat, it still moves
             if(!splat){
                 checkKeys();
+            } else {
+                checkSplat();
             }
-            checkSplat();
         }
     }
 
-    public void changeImage()
+    public void initAnimation()
     {
         time++;
+        
         if(time%8 == 0){
             GreenfootImage img = new GreenfootImage("Robot3Bolt-" + imageNum + ".png");
+            
             if(right){
                 setImage(img);
             }
-            else{
+            else {
+                // If the object is going in the left direction, mirror it so image reflects direction
                 img.mirrorHorizontally();
                 setImage(img);
             }
+            
             imageNum++;
         }
         
+        // If true, initial animation is complete
         if(imageNum == 4){
-            changeImage = false;
+            initialized = false;
             imageNum = 1;
         }
     }
@@ -60,25 +67,32 @@ public class Robot3Bolt extends Actor
         if(right){
             move(3);
         }
-        else{
+        else {
             move(-3);
         }
     }
-
+    
+    // Identical to checkSplat() in BoltRobotBolt
     public void checkSplat()
     {
+        /* After Robot3Bolt hits Paul, is at the world edge, or splats, start/continue
+           the splat animation */
         if(isTouching(Paul.class) || atWorldEdge() || splat){
-            //If the bolt just hit Paul, then splat = true and imageNum resets to 1
+            /* True only on first call of when Robot3Bolt hit Paul or when it is at
+               world edge (start splat animation) */
             if(!splat){
                 splat = true;
-                //If it splat while touching Paul, then it does damage to Paul
+                // True only if the bolt hit Paul, then does damage to Paul
                 if(isTouching(Paul.class)){
                     doDamage(40);
                 }
                 imageNum = 1;
             }
+            
             time++;
+            
             if(time%8 == 0){
+                // BoltRobotBolt is removed after splat animation is complete
                 if(imageNum ==  3){
                     getWorld().removeObject(this);
                 }
@@ -96,6 +110,7 @@ public class Robot3Bolt extends Actor
         p.takeDamage(damage);
     }
 
+    // Returns true if a Robot3Bolt object is at the edge of the world
     public boolean atWorldEdge()
     {
         if (getX() <= 5 || getX() >= getWorld().getWidth()-5)
