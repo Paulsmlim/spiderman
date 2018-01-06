@@ -20,7 +20,6 @@ public class Robot1 extends Enemy
     // True whenever Robot1 gets hit by Paul
     private boolean hurt = false;
     private boolean facingRight;
-    private boolean inAir = false;
     // X and Y value of Paul
     private int PaulX;
     private int PaulY;
