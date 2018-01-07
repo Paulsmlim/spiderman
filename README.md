@@ -15,7 +15,6 @@ Most of the code in this program are in these classes:
   
   Robot3
   
-  
   BoltRobot
   
   Robot3Bolt
